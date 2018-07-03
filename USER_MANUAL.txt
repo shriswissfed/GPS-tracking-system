@@ -1,0 +1,62 @@
+GPS DATA RETRIEVAL:
+FILES INVLOVED:
+gps_alternative.py,cgps.py,gps.py
+1.Listen for serial port open connections. 
+2.parse the data string. 
+3.pass the coordinates to convert from dms domain to dd domain. 
+4.Show it in using any map provider.
+
+
+ROUTE PLANNER:
+Files involved :
+1 . leaflet routing machine. Js (library file) 
+
+2. Geocoding. Js
+2.a Convert address to Co ordinates. 
+2.b reverse geocoding. 
+2.c Showing routes/alternative with time and distance. 
+
+3.index. Js(to open with single default route),index1.js(to open with multiple default routes)
+3.a Initialize map(osm). Add base map layer. 
+3.b set up control for routing. Add way points if necessary. 
+3.c set alternative routes and dragging options and dynamic routing, way points.
+3.d Click on map and find routes, display distance. 
+
+4.index.css
+5.main. Html link to all above files.
+
+PLAYBACK :
+1.playback. Js
+1.a Add base map layer,background.
+1.b edit playback options,slider control,speed control.
+1.c icon array for markers of locations.
+2.playback_control.js
+2.a Define control for calendar,markers.
+2.b Define properties for time slider and speed slider.
+3.Demo_tracks.js
+3.a Get number of lat and lng of a route with a minimum difference of .000005000 between each OR get GPS data from gps_device.
+4.playback.html link to all urls and files. 
+
+LOCATION SCANNING:
+Show map. (Google api ). 
+Show country of user selection or world map. Show city of user selection. 
+Get type of place search from user. 
+1. hospital. Html (internal js script) 
+1.a scan for all hospitals in the city. 
+1.b drop markers and specify information in map. 
+1.c show all results in a side bar. 
+2. Do same for workshops, bus station.
+3.IMPORTANT CHANGE API KEY IN LAST BEFORE LINE IN SCRIPT SOURCE EVERY ONCE IN A WHILE.Generate google api from different accounts.
+
+NOTIFICATION SYSTEM :
+1.node_nodemailer,node_lodash(partially working,input for email options not able to get from api.).
+1.a n npm package called nodemailer to send e-mails to recipients
+1.b create a transporter object to send mails
+1.c  Alternatively, use a third party e-mail delivery and management service (Sendgrip) to send mails.(npm sendgrip package).
+2.connect with mongo server and mongo database.
+3.Mail.py(WORKING!!!ONLY FOR GMAIL)
+3.a download temboo library and import code to script.
+3.b specify sender and recipient in sendmessageFrom and To lines.
+3.c just run in cmd for windows/for linux start python simpleHttpServer in 8000 port and run file..
+
+
